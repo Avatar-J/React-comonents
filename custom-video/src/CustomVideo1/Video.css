@@ -1,0 +1,110 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.video-container{
+ width: 100vw;
+
+ 
+}
+
+.video-wrapper{
+   
+    width: 90%;
+    max-width: 1000px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    margin-inline: auto;
+  
+}
+
+.video{
+ position: relative;
+ width: 100%;
+ height: auto;
+}
+
+.video-header{
+font-size: 2rem;
+padding: 10px;
+font-weight: 600;
+
+}
+
+/* .video-overlay{
+ position: absolute;
+ right: 0;
+ left: 0;
+ top: 0;
+ bottom: 0;
+ background-color: rgba(0, 0, 0, 0.2);
+ width: 710px;
+ height: 400px;
+ z-index: 1;
+ margin: 0 auto;
+ display: flex;
+ flex-direction: column;
+ justify-content: end;
+} */
+.video-controls{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
+    width: 90%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 4px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+.video:hover~.video-controls{
+    opacity: 1;
+}
+.video-controls:hover{
+    opacity: 1;
+}
+
+.progress-bar{
+    height: 5px;
+    background-color: blue;
+    width: 90%;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.inner-progress-bar{
+    background-color: green;
+    height: 100%;
+    animation: animate-bar 596s linear forwards;
+    animation-play-state: paused;
+}
+
+@keyframes animate-bar {
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+.restart-progress-bar{
+    width: 0%;
+}
+
+.control-button{
+    background: transparent;
+    border: none;
+    color: blue;
+    font-size: 1.5rem;
+}
+
+.restart-progress-bar{
+    animation: animate-bar 596s linear forwards;
+}
